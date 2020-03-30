@@ -234,17 +234,17 @@ function parse_parameters() {
     if [[ -z ${TARBALLS} ]]; then
         # Set GCC branch based on version and Linaro or not
         case "${SOURCE}:${VERSION}" in
-            "gnu:4") GCC=gcc-4_9-branch
+            "gnu:4") GCC="releases/gcc-4.9"
                      BINUTILS_git="binutils-2_29-branch"
                      GLIBC="glibc-2.26"
                      ISL="isl-0.17.1" ;;
-            "gnu:5") GCC=gcc-5-branch
+            "gnu:5") GCC="releases/gcc-5"
                      GLIBC="glibc-2.27"
                      ISL="isl-0.17.1" ;;
-            "gnu:6") GCC=gcc-6-branch ;;
-            "gnu:7") GCC=gcc-7-branch ;;
-            "gnu:8") GCC=gcc-8-branch ;;
-            "gnu:9") GCC=gcc-9-branch ;;
+            "gnu:6") GCC="releases/gcc-6" ;;
+            "gnu:7") GCC="releases/gcc-7" ;;
+            "gnu:8") GCC="releases/gcc-8" ;;
+            "gnu:9") GCC="releases/gcc-9" ;;
             "gnu:10") GCC=master ;;
             "linaro:4") GCC=linaro-local/releases/linaro-4.9-2017.01
                         GLIBC="glibc-2.27"
