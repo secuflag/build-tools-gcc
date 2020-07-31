@@ -375,7 +375,7 @@ function download_sources() {
 
     if [[ ! -f ${MPFR}.tar.xz ]]; then
         header "DOWNLOADING MPFR"
-        axel https://www.mpfr.org/mpfr-current/${MPFR}.tar.xz
+        axel https://ftp.gnu.org/gnu/mpfr/${MPFR}.tar.xz
     fi
 
     if [[ ! -f ${GMP}.tar.xz ]]; then
