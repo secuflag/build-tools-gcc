@@ -176,8 +176,8 @@ function setup_variables() {
     DEPTH_FLAG=true
 
     # Binary versions
-    BINUTILS_git="binutils-2_35-branch"
-    BINUTILS_tar="2.35"
+    BINUTILS_git="binutils-2_36-branch"
+    BINUTILS_tar="2.36"
     GMP="gmp-6.2.1"
     MPFR="mpfr-4.1.0"
     MPC="mpc-1.2.1"
