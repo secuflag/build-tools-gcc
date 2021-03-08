@@ -356,11 +356,6 @@ function download_sources() {
         header "DOWNLOADING GCC"
         git_clone git://gcc.gnu.org/git/gcc.git -b ${GCC}
     fi
-
-    if [[ ! -f ${GCC}.tar.${EXT:-xz} ]]; then
-        header "DOWNLOADING GCC"
-        ${DOWNLOADER} https://mirrors.kernel.org/gnu/gcc/${GCC}/${GCC}.tar.${EXT:-xz}
-    fi
 }
 
 
