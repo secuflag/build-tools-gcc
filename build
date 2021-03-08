@@ -176,8 +176,7 @@ function setup_variables() {
     DEPTH_FLAG=true
 
     # Binary versions
-    BINUTILS_git="binutils-2_36-branch"
-    BINUTILS_tar="2.36"
+    BINUTILS="binutils-2_36-branch"
     GMP="gmp-6.2.1"
     MPFR="mpfr-4.1.0"
     MPC="mpc-1.2.1"
@@ -233,7 +232,7 @@ function parse_parameters() {
     # Set GCC branch based on version
     case "${SOURCE}:${VERSION}" in
         "gnu:4") GCC="releases/gcc-4.9"
-                 BINUTILS_git="binutils-2_29-branch"
+                 BINUTILS="binutils-2_29-branch"
                  GLIBC="glibc-2.26"
                  ISL="isl-0.17.1" ;;
         "gnu:5") GCC="releases/gcc-5"
@@ -343,7 +342,7 @@ function download_sources() {
 
     if [[ ! -d binutils ]]; then
         header "DOWNLOADING BINUTILS"
-        git_clone https://git.linaro.org/toolchain/binutils-gdb.git binutils -b ${BINUTILS_git}
+        git_clone https://git.linaro.org/toolchain/binutils-gdb.git binutils -b ${BINUTILS}
     fi
 
     if [[ ! -d isl ]]; then
@@ -392,9 +391,9 @@ function update_repos() {
         )
         (
             cd binutils || die "binutils did not get cloned properly!"
-            [[ -n ${FULL_SOURCE} ]] && BRANCH=origin/${BINUTILS_git} || BRANCH=FETCH_HEAD
-            git_fetch origin ${BINUTILS_git}
-            git checkout -f ${BINUTILS_git} || git checkout -f -b ${BINUTILS_git} ${BRANCH}
+            [[ -n ${FULL_SOURCE} ]] && BRANCH=origin/${BINUTILS} || BRANCH=FETCH_HEAD
+            git_fetch origin ${BINUTILS}
+            git checkout -f ${BINUTILS} || git checkout -f -b ${BINUTILS} ${BRANCH}
         )
         (
             cd gcc || die "GCC did not get cloned properly!"
