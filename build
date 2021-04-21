@@ -345,10 +345,9 @@ function download_sources() {
         ${DOWNLOADER} https://ftp.gnu.org/gnu/binutils/${BINUTILS}.tar.xz
     fi
 
-    if [[ ! -d isl ]]; then
+    if [[ ! -f isl ]]; then
         header "DOWNLOADING ISL"
-        # don't use git_clone
-        git clone git://repo.or.cz/isl.git
+        ${DOWNLOADER} http://isl.gforge.inria.fr/${ISL}.tar.xz
     fi
 
     if [[ ! -d gcc ]]; then
@@ -377,6 +376,7 @@ function extract_sources() {
     extract ${GLIBC}.tar.xz ../${GLIBC}
     extract linux-${LINUX}.tar.xz ../linux
     extract ${BINUTILS}.tar.xz ../binutils
+    extract ${ISL}.tar.xz ../isl
 }
 
 
