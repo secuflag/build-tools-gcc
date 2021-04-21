@@ -232,7 +232,7 @@ function parse_parameters() {
     # Set GCC branch based on version
     case "${SOURCE}:${VERSION}" in
         "gnu:4") GCC="releases/gcc-4.9"
-                 BINUTILS="binutils-2_29-branch"
+                 BINUTILS="binutils-2.29"
                  GLIBC="glibc-2.26"
                  ISL="isl-0.17.1" ;;
         "gnu:5") GCC="releases/gcc-5"
