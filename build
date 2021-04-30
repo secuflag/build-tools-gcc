@@ -243,6 +243,7 @@ function parse_parameters() {
         "gnu:8") GCC="releases/gcc-8" ;;
         "gnu:9") GCC="releases/gcc-9" ;;
         "gnu:10") GCC="releases/gcc-10" ;;
+        "gnu:11") GCC="releases/gcc-11" ;;
         "gnu:master") GCC="master" ;;
         *) die "Absent or invalid GCC version or source specified!" -h ;;
     esac
